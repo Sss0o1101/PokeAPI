@@ -33,7 +33,7 @@ body {
   min-height: 100vh;
   justify-content: center;
   flex-direction: column;
-  background-color: #535bf2;  /* 背景色の変更 */
+  background-color: #5b20b9;  /* 背景色の変更 */
 }
 
 h1 {
@@ -85,7 +85,7 @@ button {
 }
 
 button:hover {
-  border-color: #646cff;
+  /* background-color: #1850d2; */
 }
 
 button:focus,
@@ -121,7 +121,7 @@ input {
 
 .result {
   padding: 20px;
-  border: 1px solid #fff;
+  border: 3px inset #91214a; /* */
   border-radius: 8px; /* */
   margin-top: 30px;   /* */
   width: 300px;
@@ -132,4 +132,26 @@ input {
 .result dt,
 .result dd {
   margin: 0;
+}
+
+
+/* ------------------------------------ */
+
+.poke-name {
+  color: #ffffff;
+  /* font-size: 24px;
+  font-weight: bold;
+  color: #333; */
+}
+
+.poke-image {
+  width: 180px;
+  height: auto;
+}
+
+.poke-height,
+.poke-weight {
+  color: #ffffff;
+  /* font-size: 18px;
+  color: #666; */
 }
