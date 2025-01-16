@@ -17,7 +17,7 @@
 
 a {
   font-weight: 600;
-  color: #18D284;
+  color: #af2730; /* #18D284 */
   text-decoration: inherit;
 }
 
@@ -37,7 +37,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  color: #f065d7;
+  font-size: 3.5em;
   /* font-family: ; */
   line-height: 1.1;
 }
@@ -129,7 +130,7 @@ input {
 
 .result {
   padding: 20px;
-  border: 3px inset #91214a; /* */
+  border: 3px inset #83102c; /* #099a84; */
   border-radius: 8px; /* */
   margin-top: 30px;   /* */
   width: 300px;
