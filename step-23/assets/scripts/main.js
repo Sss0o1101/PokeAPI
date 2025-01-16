@@ -2,32 +2,45 @@
 const pokeAPI1 = 'https://pokeapi.co/api/v2/pokemon/';
 const pokeAPI2 = 'https://pokeapi.co/api/v2/';
 const pokeAPI3 = 'https://pokeapi.co/api/v2/pokemon-species/';
+const pokeAPI4 = 'https://pokeapi.co/api/v2/type/';
 
+//要素の取得
 const pokeSearch = document.querySelector('input');
 const btn = document.querySelector('button');
+const result = document.querySelector('#pk-result');
 
 //<input type="text" name="pokeName" placeholder="Name or Number">にポケモンの名前か番号を入力して、<button type="submit">Get Data</button>をクリックすると、そのポケモンの情報が<div class="result" id="pk-result"></div>に表示、挿入されるようにしてください。
-
 btn.addEventListener('click', async (event) => {
     event.preventDefault();  // ページのリロードを防ぐ
     try {
+        result.innerHTML = ''; // ここで結果をクリア
+
         //pokeAPI1
         const info = pokeSearch.value; // 入力されたポケモンの名前または番号を取得
         const response = await fetch(`${pokeAPI1}${info}`); // URLに追加
         const pokeData = await response.json();
         console.log(pokeData);
 
-        const result = document.querySelector('#pk-result');
-        result.innerHTML = `
-            <h2>${pokeData.name}</h2>
-            <img src="${pokeData.sprites.front_default}" alt="${pokeData.name}" />
+        //表示
+        result.insertAdjacentHTML('beforeend',
+            `<h2>${pokeData.name}</h2>
+            <img src="${pokeData.sprites.front_default}" alt="${pokeData.name}">
             <p>Height: ${pokeData.height}</p>
-            <p>Weight: ${pokeData.weight}</p>
-        `;
+            <p>Weight: ${pokeData.weight}</p>`
+        );
     } catch (error) {
         console.log('No data');
     }
 });
+
+
+
+
+
+
+
+
+
 
 
 
