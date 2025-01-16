@@ -16,17 +16,21 @@ btn.addEventListener('click', async (event) => {
         result.innerHTML = ''; // ここで結果をクリア
 
         //pokeAPI1
-        const info = pokeSearch.value; // 入力されたポケモンの名前または番号を取得
+        const info = pokeSearch.value.toLowerCase(); // 入力されたポケモンの名前または番号を取得
         const response = await fetch(`${pokeAPI1}${info}`); // URLに追加
+        if (!response.ok) { // レスポンスが成功かどうかを確認
+            alert('Not found😭'); // アラートを追加
+            throw new Error('Not found.');
+        }
         const pokeData = await response.json();
         console.log(pokeData);
 
         //表示
         result.insertAdjacentHTML('beforeend',
-            `<h2>${pokeData.name}</h2>
-            <img src="${pokeData.sprites.front_default}" alt="${pokeData.name}">
-            <p>Height: ${pokeData.height}</p>
-            <p>Weight: ${pokeData.weight}</p>`
+            `<h2 class="poke-name">${pokeData.name}</h2>
+            <img class="poke-image" src="${pokeData.sprites.front_default}" alt="${pokeData.name}">
+            <p class="poke-height">Height: ${pokeData.height}</p>
+            <p class="poke-weight">Weight: ${pokeData.weight}</p>`
         );
     } catch (error) {
         console.log('No data');
