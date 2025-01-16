@@ -93,6 +93,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* randomボタンの追加 */
+#rdmBtn {
+  /* background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #333; */
+}
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -152,6 +160,7 @@ input {
 .poke-height,
 .poke-weight {
   color: #ffffff;
+  font-weight: bold;
   /* font-size: 18px;
   color: #666; */
 }
