@@ -42,13 +42,13 @@ btn.addEventListener('click', async (event) => {
 //random
 rdmBtn.addEventListener('click', async () => {
     try {
-        result.innerHTML = ''; // ここで結果をクリア
+        result.innerHTML = '';
 
         //pokeAPI1
         const rdmNum = Math.floor(Math.random() * 898) + 1; // ランダムな番号を取得
-        const response = await fetch(`${pokeAPI1}${rdmNum}`); // URLに追加
-        if (!response.ok) { // レスポンスが成功かどうかを確認
-            alert('Not found😭'); // アラートを追加
+        const response = await fetch(`${pokeAPI1}${rdmNum}`);
+        if (!response.ok) {
+            alert('Not found😭');
             throw new Error('Not found.');
         }
         const pokeData = await response.json();
@@ -93,14 +93,6 @@ rdmBtn.addEventListener('click', async () => {
         console.log('No data');
     }
 });
-
-
-
-
-
-
-
-
 
 
 
