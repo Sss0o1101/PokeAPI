@@ -12,15 +12,15 @@ const result = document.querySelector('#pk-result');
 
 //search
 btn.addEventListener('click', async (event) => {
-    event.preventDefault();  // ページのリロードを防ぐ
+    event.preventDefault();
     try {
-        result.innerHTML = ''; // ここで結果をクリア
+        result.innerHTML = '';
 
         //pokeAPI1
-        const info = pokeSearch.value.toLowerCase(); // 入力されたポケモンの名前または番号を取得
-        const response = await fetch(`${pokeAPI1}${info}`); // URLに追加
-        if (!response.ok) { // レスポンスが成功かどうかを確認
-            alert('逃げられた😭😭😭'); // アラートを追加
+        const info = pokeSearch.value.toLowerCase();
+        const response = await fetch(`${pokeAPI1}${info}`);
+        if (!response.ok) {
+            alert('逃げられた😭😭😭');
             throw new Error('Not found.');
         }
         const pokeData = await response.json();
@@ -87,14 +87,12 @@ rdmBtn.addEventListener('click', async () => {
         else if (rdmNum >= 810 && rdmNum <= 898) {
             alert('このポケモンは第八世代だ！');
         }
-
-
     } catch (error) {
         console.log('No data');
     }
 });
 
-
+//Charizard
 
 
 
